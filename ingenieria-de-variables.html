@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ingeniería de variables · Juan Pablo Hernández</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!--delimiytador para uso de letra LaText-->
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Favicons -->
+<link href="img/datasquad-icono.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Bootstrap CSS File -->
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Libraries CSS Files -->
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Main Stylesheet File -->
+<link href="css/style.css" rel="stylesheet">
+    <link href="css/mejoras.css" rel="stylesheet">
+    <link href="css/storytelling.css" rel="stylesheet">
+    <link href="css/conocimiento.css" rel="stylesheet">
+<link rel="stylesheet" href="css/indice.css" />
+<!-- =======================================================
+    Theme Name: DevFolio
+    Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+    <link href="css/tema.css" rel="stylesheet">
+    <link href="css/tema-vol2.css" rel="stylesheet">
+    <link href="css/visual-fx.css" rel="stylesheet">
+    <link href="css/scroll-fx.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--/ Nav Star /-->
+    <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll" href="index.html">Data Science</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+                aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">CONOCIMIENTO</a>
+                    </li>
+                    <!--
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="index.html">SOBRE MI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="index.html">SERVICIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="index.html">PORTAFOLIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="index.html">CONOCIMIENTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="index.html">CONTACTO</a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/ Nav End /-->
+
+    <!--/ Intro Skew Star /-->
+    <div class="intro intro-single route bg-image" style="background-image: url(img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="intro-content display-table">
+            <div class="table-cell">
+                <div class="container">
+                    <h2 class="intro-title mb-4">Construcción de variables </h2>
+                    <ol class="breadcrumb d-flex justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="index.html#variables">Conocimiento</a></li>
+                        <li class="breadcrumb-item active">Construcción de variables</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Intro Skew End /-->
+
+    <!--/ Section Blog-Single Star /-->
+    <section class="blog-wrapper sect-pt4" id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-60">
+                    <div class="post-box">
+                        <div class="post-thumb">
+                            <!--<img src="img/Linear_regression.svg.png" class="img-fluid" alt="">-->
+                        </div>
+                        <div class="post-meta">
+                            <ul>
+                                <li>
+                                    <span class="ion-ios-person"></span>
+                                    <a href="#">Juan Pablo Hernández García</a>
+                                </li>
+                                <li>
+                                    <span class="ion-pricetag"></span>
+                                    <a href="#">Científico de datos</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="article-content">
+
+                            <nav class="st-indice kb-indice" id="indice">
+  <strong>Índice</strong>
+  <ol>
+    <li value="1"><a href="#banca">Ingeniería de Variables para Banca y Riesgo Crediticio</a>
+      <ul>
+        <li><a href="#banca-ratios"><span>1.1</span> Ratios (A/B)</a></li>
+        <li><a href="#banca-lags"><span>1.2</span> Variables Rezagadas (Lag)</a></li>
+        <li><a href="#banca-rolling"><span>1.3</span> Ventanas Móviles</a></li>
+        <li><a href="#banca-crecimiento"><span>1.4</span> Variables de Crecimiento</a></li>
+        <li><a href="#banca-tendencia"><span>1.5</span> Variables de Tendencia</a></li>
+        <li><a href="#banca-volatilidad"><span>1.6</span> Volatilidad</a></li>
+        <li><a href="#banca-ranking"><span>1.7</span> Ranking y Percentiles</a></li>
+        <li><a href="#banca-acumulados"><span>1.8</span> Variables Acumuladas</a></li>
+      </ul>
+    </li>
+    <li value="2"><a href="#forecast">Ingeniería de Variables para Forecasting</a>
+      <ul>
+        <li><a href="#forecast-lag"><span>2.1</span> Variables Rezagadas (Lag)</a></li>
+        <li><a href="#forecast-media"><span>2.2</span> Media Móvil</a></li>
+        <li><a href="#forecast-max"><span>2.3</span> Máximo y Mínimo Móvil</a></li>
+        <li><a href="#forecast-rollingstd"><span>2.4</span> Desviación Estándar Móvil</a></li>
+        <li><a href="#forecast-trend"><span>2.5</span> Tendencias</a></li>
+        <li><a href="#forecast-estacionalidad"><span>2.6</span> Estacionalidad</a></li>
+        <li><a href="#forecast-eventos"><span>2.7</span> Eventos Especiales</a></li>
+        <li><a href="#forecast-acumulados"><span>2.8</span> Acumulados</a></li>
+      </ul>
+    </li>
+    <li value="3"><a href="#retail">Ingeniería de Variables para Retail</a>
+      <ul>
+        <li><a href="#retail-rfm"><span>3.1</span> RFM</a></li>
+        <li><a href="#retail-ratios"><span>3.2</span> Ratios (A/B)</a></li>
+        <li><a href="#retail-media"><span>3.3</span> Media Móvil</a></li>
+        <li><a href="#retail-lags"><span>3.4</span> Lags</a></li>
+        <li><a href="#retail-ticket"><span>3.5</span> Ticket Promedio</a></li>
+        <li><a href="#retail-frecuencia"><span>3.6</span> Frecuencia de Compra</a></li>
+        <li><a href="#retail-recencia"><span>3.7</span> Recencia</a></li>
+        <li><a href="#retail-canasta"><span>3.8</span> Canasta de Compra</a></li>
+      </ul>
+    </li>
+    <li value="4"><a href="#fraude">Ingeniería de Variables para Detección de Fraude</a>
+      <ul>
+        <li><a href="#fraude-ratios"><span>4.1</span> Ratios (A/B)</a></li>
+        <li><a href="#fraude-frecuencia"><span>4.2</span> Frecuencia de Eventos</a></li>
+        <li><a href="#fraude-recencia"><span>4.3</span> Recencia</a></li>
+        <li><a href="#fraude-rolling"><span>4.4</span> Ventanas Móviles</a></li>
+        <li><a href="#fraude-volatilidad"><span>4.5</span> Volatilidad</a></li>
+        <li><a href="#fraude-ranking"><span>4.6</span> Ranking</a></li>
+      </ul>
+    </li>
+    <li value="5"><a href="#marketing">Ingeniería de Variables para Marketing y Churn</a>
+      <ul>
+        <li><a href="#marketing-rfm"><span>5.1</span> RFM</a></li>
+        <li><a href="#marketing-ratios"><span>5.2</span> Ratios (A/B)</a></li>
+        <li><a href="#marketing-media"><span>5.3</span> Media Móvil</a></li>
+        <li><a href="#marketing-lags"><span>5.4</span> Lags</a></li>
+        <li><a href="#marketing-frecuencia"><span>5.5</span> Frecuencia</a></li>
+        <li><a href="#marketing-recencia"><span>5.6</span> Recencia</a></li>
+        <li><a href="#marketing-tendencias"><span>5.7</span> Tendencias</a></li>
+      </ul>
+    </li>
+    <li value="6"><a href="#manufactura">Ingeniería de Variables para Manufactura</a>
+      <ul>
+        <li><a href="#manufactura-ratios"><span>6.1</span> Ratios (A/B)</a></li>
+        <li><a href="#manufactura-media"><span>6.2</span> Media Móvil</a></li>
+        <li><a href="#manufactura-lags"><span>6.3</span> Lags</a></li>
+        <li><a href="#manufactura-volatilidad"><span>6.4</span> Volatilidad</a></li>
+        <li><a href="#manufactura-tendencias"><span>6.5</span> Tendencias</a></li>
+        <li><a href="#manufactura-acumulados"><span>6.6</span> Acumulados</a></li>
+      </ul>
+    </li>
+  </ol>
+</nav>
+
+                        
+<hr class="kb-separador">
+
+<h2 id="banca" class="st-h2"><span>1</span> Ingeniería de Variables para Banca y Riesgo Crediticio</h2>
+<p class="kb-seccion-intro">Variables que describen la capacidad y el comportamiento de pago de un cliente a partir de su historial de cuentas, saldos y pagos.</p>
+
+<div class="kb-item" id="banca-ratios">
+  <h3><span class="kb-num">1.1</span> Ratios (A/B)</h3>
+  <p>Relacionan dos montos para hacerlos comparables entre clientes de distinto tamaño. Ejemplos: utilización de la línea (saldo / límite), pago / pago mínimo, deuda / ingreso. Una utilización arriba de 80% suele anticipar problemas de pago.</p>
+  <div class="kb-formula">$$\text{Utilización}=\frac{\text{Saldo}}{\text{Límite de crédito}}$$</div>
+</div>
+
+<div class="kb-item" id="banca-lags">
+  <h3><span class="kb-num">1.2</span> Variables Rezagadas (Lag)</h3>
+  <p>El valor de una variable en meses anteriores: saldo hace 1, 3 y 6 meses, días de atraso del mes pasado. Permiten al modelo ver la historia reciente del cliente.</p>
+</div>
+
+<div class="kb-item" id="banca-rolling">
+  <h3><span class="kb-num">1.3</span> Ventanas Móviles</h3>
+  <p>Estadísticos calculados sobre los últimos n meses: pago promedio de 3 meses, número de atrasos en 12 meses, saldo máximo en 6 meses.</p>
+</div>
+
+<div class="kb-item" id="banca-crecimiento">
+  <h3><span class="kb-num">1.4</span> Variables de Crecimiento</h3>
+  <p>Cambio porcentual entre periodos, como el crecimiento del saldo contra hace 3 meses. Un endeudamiento que crece rápido es señal de riesgo.</p>
+  <div class="kb-formula">$$\text{Crecimiento}=\frac{x_t-x_{t-k}}{x_{t-k}}$$</div>
+</div>
+
+<div class="kb-item" id="banca-tendencia">
+  <h3><span class="kb-num">1.5</span> Variables de Tendencia</h3>
+  <p>Pendiente de una regresión simple sobre los últimos n meses: indica si el saldo o los atrasos van al alza o a la baja, con menos ruido que comparar solo dos meses.</p>
+</div>
+
+
+<div class="kb-lab vz-lab" data-viz="iv-tend"></div>
+<div class="kb-item" id="banca-volatilidad">
+  <h3><span class="kb-num">1.6</span> Volatilidad</h3>
+  <p>Desviación estándar o coeficiente de variación de saldos y pagos. Un cliente con ingresos o pagos muy irregulares tiene más riesgo que uno estable con el mismo promedio.</p>
+  <div class="kb-formula">$$CV=\frac{\sigma}{\mu}$$</div>
+</div>
+
+<div class="kb-item" id="banca-ranking">
+  <h3><span class="kb-num">1.7</span> Ranking y Percentiles</h3>
+  <p>Posición del cliente respecto a su segmento (por ejemplo, percentil de utilización dentro de su producto). Hace comparables variables con escalas muy distintas.</p>
+</div>
+
+<div class="kb-item" id="banca-acumulados">
+  <h3><span class="kb-num">1.8</span> Variables Acumuladas</h3>
+  <p>Totales desde el inicio de la relación: meses con atraso acumulados, total pagado, número de créditos previos. Resumen el historial completo del cliente.</p>
+  <pre class="kb-code"><code><span class="c"># Ejemplo en pandas: una fila por cliente y mes</span>
+df = df.sort_values([<span class="s">'cliente'</span>, <span class="s">'mes'</span>])
+g  = df.groupby(<span class="s">'cliente'</span>)
+df[<span class="s">'utilizacion'</span>]   = df[<span class="s">'saldo'</span>] / df[<span class="s">'limite'</span>]
+df[<span class="s">'saldo_lag3'</span>]    = g[<span class="s">'saldo'</span>].shift(3)
+df[<span class="s">'atrasos_12m'</span>]   = g[<span class="s">'atraso'</span>].transform(<span class="k">lambda</span> s: s.rolling(12, min_periods=1).sum())
+df[<span class="s">'crec_saldo_3m'</span>] = g[<span class="s">'saldo'</span>].pct_change(3)
+df[<span class="s">'vol_pago_6m'</span>]   = g[<span class="s">'pago'</span>].transform(<span class="k">lambda</span> s: s.rolling(6).std())</code></pre>
+</div>
+
+
+<div class="kb-lab vz-lab" data-viz="iv-ratio"></div>
+<h2 id="forecast" class="st-h2"><span>2</span> Ingeniería de Variables para Forecasting</h2>
+<p class="kb-seccion-intro">Variables para pronosticar ventas, demanda o retiros de efectivo. Regla de oro: usar solo información disponible <strong>antes</strong> del momento que se pronostica, para evitar fuga de información.</p>
+
+<div class="kb-item" id="forecast-lag">
+  <h3><span class="kb-num">2.1</span> Variables Rezagadas (Lag)</h3>
+  <p>La demanda de hace 1, 7 o 14 días. El rezago de 7 días captura el patrón semanal (el lunes se parece al lunes anterior).</p>
+  <figure class="st-fig"><img src="img/conocimiento/iv_ventanas.png" class="img-fluid" alt="Serie con rezago y media móvil"></figure>
+</div>
+
+<div class="kb-item" id="forecast-media">
+  <h3><span class="kb-num">2.2</span> Media Móvil</h3>
+  <p>Promedio de los últimos n días. Suaviza el ruido y da el nivel base de la serie. Siempre se calcula con un desplazamiento (shift) para no incluir el día que se quiere predecir.</p>
+</div>
+
+<div class="kb-item" id="forecast-max">
+  <h3><span class="kb-num">2.3</span> Máximo y Mínimo Móvil</h3>
+  <p>Valores extremos de los últimos n días. Ayudan a anticipar picos y a dimensionar inventarios de seguridad.</p>
+</div>
+
+<div class="kb-item" id="forecast-rollingstd">
+  <h3><span class="kb-num">2.4</span> Desviación Estándar Móvil</h3>
+  <p>Variabilidad reciente de la serie. Cuando sube, el pronóstico es menos confiable y conviene un margen de seguridad mayor.</p>
+</div>
+
+<div class="kb-item" id="forecast-trend">
+  <h3><span class="kb-num">2.5</span> Tendencias</h3>
+  <p>Indicadores de crecimiento de largo plazo: un contador de tiempo, la pendiente de los últimos n periodos o la diferencia entre una media móvil corta y una larga.</p>
+</div>
+
+<div class="kb-item" id="forecast-estacionalidad">
+  <h3><span class="kb-num">2.6</span> Estacionalidad</h3>
+  <p>Patrones que se repiten por calendario: día de la semana, día del mes, mes, quincena, temporada. Se codifican como categorías o con funciones seno y coseno para que el modelo entienda que diciembre está cerca de enero.</p>
+  <div class="kb-formula">$$\text{mes}_{\sin}=\sin\Big(\frac{2\pi\cdot\text{mes}}{12}\Big)\qquad \text{mes}_{\cos}=\cos\Big(\frac{2\pi\cdot\text{mes}}{12}\Big)$$</div>
+</div>
+
+
+<div class="kb-lab vz-lab" data-viz="iv-ciclo"></div>
+<div class="kb-item" id="forecast-eventos">
+  <h3><span class="kb-num">2.7</span> Eventos Especiales</h3>
+  <p>Indicadores de días atípicos: festivos, días de pago de nómina o pensión, Buen Fin, promociones, cierres de sucursal. Suelen ser las variables que más mejoran un pronóstico.</p>
+</div>
+
+<div class="kb-item" id="forecast-acumulados">
+  <h3><span class="kb-num">2.8</span> Acumulados</h3>
+  <p>Ventas acumuladas del mes o del año a la fecha, útiles para comparar el avance contra la meta o contra el mismo periodo del año anterior.</p>
+  <pre class="kb-code"><code><span class="c"># Una fila por sucursal y día</span>
+g = df.sort_values(<span class="s">'fecha'</span>).groupby(<span class="s">'sucursal'</span>)[<span class="s">'ventas'</span>]
+df[<span class="s">'lag_7'</span>]     = g.shift(7)
+df[<span class="s">'media_7'</span>]   = g.transform(<span class="k">lambda</span> s: s.shift(1).rolling(7).mean())
+df[<span class="s">'max_14'</span>]    = g.transform(<span class="k">lambda</span> s: s.shift(1).rolling(14).max())
+df[<span class="s">'std_14'</span>]    = g.transform(<span class="k">lambda</span> s: s.shift(1).rolling(14).std())
+df[<span class="s">'dia_semana'</span>] = df[<span class="s">'fecha'</span>].dt.dayofweek
+df[<span class="s">'es_quincena'</span>] = df[<span class="s">'fecha'</span>].dt.day.isin([15, 30, 31]).astype(int)</code></pre>
+</div>
+
+
+<div class="kb-lab vz-lab" data-viz="iv-roll"></div>
+<h2 id="retail" class="st-h2"><span>3</span> Ingeniería de Variables para Retail</h2>
+<p class="kb-seccion-intro">Variables a nivel cliente, producto o tienda para entender el comportamiento de compra.</p>
+
+<div class="kb-item" id="retail-rfm">
+  <h3><span class="kb-num">3.1</span> RFM</h3>
+  <p>Resume a cada cliente en tres medidas: <strong>Recencia</strong> (días desde su última compra), <strong>Frecuencia</strong> (número de compras) y <strong>Monto</strong> (gasto total). Es la base de la segmentación de clientes.</p>
+</div>
+
+
+<div class="kb-lab vz-lab" data-viz="iv-rfm"></div>
+<div class="kb-item" id="retail-ratios">
+  <h3><span class="kb-num">3.2</span> Ratios (A/B)</h3>
+  <p>Fill rate (piezas surtidas / piezas pedidas), margen (utilidad / venta), devoluciones / ventas, venta por metro cuadrado.</p>
+</div>
+
+<div class="kb-item" id="retail-media">
+  <h3><span class="kb-num">3.3</span> Media Móvil</h3>
+  <p>Venta promedio de las últimas semanas por producto y tienda: el nivel base para planear reabastecimiento.</p>
+</div>
+
+<div class="kb-item" id="retail-lags">
+  <h3><span class="kb-num">3.4</span> Lags</h3>
+  <p>Venta de la misma semana del año anterior o de la semana pasada, para comparar y pronosticar.</p>
+</div>
+
+<div class="kb-item" id="retail-ticket">
+  <h3><span class="kb-num">3.5</span> Ticket Promedio</h3>
+  <p>Venta total entre número de tickets. Separa si una tienda vende más porque llegan más clientes o porque cada uno compra más.</p>
+  <div class="kb-formula">$$\text{Ticket promedio}=\frac{\text{Venta total}}{\text{Número de tickets}}$$</div>
+</div>
+
+<div class="kb-item" id="retail-frecuencia">
+  <h3><span class="kb-num">3.6</span> Frecuencia de Compra</h3>
+  <p>Número de compras en un periodo o días promedio entre compras. Detecta clientes frecuentes y los que están espaciando sus visitas.</p>
+</div>
+
+<div class="kb-item" id="retail-recencia">
+  <h3><span class="kb-num">3.7</span> Recencia</h3>
+  <p>Días desde la última compra. Un cliente que solía venir cada semana y lleva un mes sin volver es una alerta de abandono.</p>
+</div>
+
+<div class="kb-item" id="retail-canasta">
+  <h3><span class="kb-num">3.8</span> Canasta de Compra</h3>
+  <p>Número de artículos por ticket, categorías distintas compradas y productos que se compran juntos (reglas de asociación). Sirve para promociones cruzadas y acomodo en tienda.</p>
+  <pre class="kb-code"><code><span class="c"># RFM por cliente a partir de una tabla de tickets</span>
+hoy = tickets[<span class="s">'fecha'</span>].max()
+rfm = tickets.groupby(<span class="s">'cliente'</span>).agg(
+    recencia   = (<span class="s">'fecha'</span>, <span class="k">lambda</span> f: (hoy - f.max()).days),
+    frecuencia = (<span class="s">'ticket'</span>, <span class="s">'nunique'</span>),
+    monto      = (<span class="s">'total'</span>, <span class="s">'sum'</span>))
+rfm[<span class="s">'ticket_prom'</span>] = rfm[<span class="s">'monto'</span>] / rfm[<span class="s">'frecuencia'</span>]</code></pre>
+</div>
+
+<h2 id="fraude" class="st-h2"><span>4</span> Ingeniería de Variables para Detección de Fraude</h2>
+<p class="kb-seccion-intro">Variables que comparan una transacción con el comportamiento normal del cliente; el fraude suele verse como un cambio brusco.</p>
+
+<div class="kb-item" id="fraude-ratios">
+  <h3><span class="kb-num">4.1</span> Ratios (A/B)</h3>
+  <p>Monto de la transacción entre el monto promedio del cliente. Una compra 10 veces mayor que lo habitual es sospechosa.</p>
+  <div class="kb-formula">$$\text{Ratio}=\frac{\text{Monto actual}}{\text{Monto promedio histórico}}$$</div>
+</div>
+
+<div class="kb-item" id="fraude-frecuencia">
+  <h3><span class="kb-num">4.2</span> Frecuencia de Eventos</h3>
+  <p>Número de transacciones en la última hora o en el último día, intentos fallidos, comercios distintos. Muchas operaciones en poco tiempo es un patrón típico de fraude.</p>
+</div>
+
+
+<div class="kb-lab vz-lab" data-viz="iv-fraude"></div>
+<div class="kb-item" id="fraude-recencia">
+  <h3><span class="kb-num">4.3</span> Recencia</h3>
+  <p>Tiempo desde la transacción anterior, desde el último cambio de contraseña o desde el alta de un dispositivo nuevo.</p>
+</div>
+
+<div class="kb-item" id="fraude-rolling">
+  <h3><span class="kb-num">4.4</span> Ventanas Móviles</h3>
+  <p>Montos y conteos en ventanas de minutos, horas y días. Se comparan ventanas cortas contra largas para detectar aceleraciones.</p>
+</div>
+
+<div class="kb-item" id="fraude-volatilidad">
+  <h3><span class="kb-num">4.5</span> Volatilidad</h3>
+  <p>Variabilidad de montos, horarios y ubicaciones del cliente. Un cliente muy regular que de pronto cambia de patrón merece revisión.</p>
+</div>
+
+<div class="kb-item" id="fraude-ranking">
+  <h3><span class="kb-num">4.6</span> Ranking</h3>
+  <p>Percentil del monto de la transacción dentro del historial del cliente o dentro del comercio.</p>
+  <pre class="kb-code"><code><span class="c"># Transacciones de la última hora por tarjeta (ventana de tiempo)</span>
+tx = tx.sort_values(<span class="s">'timestamp'</span>).set_index(<span class="s">'timestamp'</span>)
+tx[<span class="s">'tx_ultima_hora'</span>] = tx.groupby(<span class="s">'tarjeta'</span>)[<span class="s">'monto'</span>].transform(<span class="k">lambda</span> s: s.rolling(<span class="s">'1h'</span>).count())
+tx[<span class="s">'ratio_monto'</span>]    = tx[<span class="s">'monto'</span>] / tx.groupby(<span class="s">'tarjeta'</span>)[<span class="s">'monto'</span>].transform(<span class="k">lambda</span> s: s.expanding().mean().shift(1))</code></pre>
+</div>
+
+<h2 id="marketing" class="st-h2"><span>5</span> Ingeniería de Variables para Marketing y Churn</h2>
+<p class="kb-seccion-intro">Variables para predecir qué clientes van a dejar el servicio (churn) y a quién dirigir campañas.</p>
+
+<div class="kb-item" id="marketing-rfm">
+  <h3><span class="kb-num">5.1</span> RFM</h3>
+  <p>Igual que en retail: recencia, frecuencia y monto. Los clientes con recencia alta y frecuencia en caída son los primeros candidatos a abandonar.</p>
+</div>
+
+<div class="kb-item" id="marketing-ratios">
+  <h3><span class="kb-num">5.2</span> Ratios (A/B)</h3>
+  <p>Tasa de apertura de correos, clics / impresiones, uso actual / uso promedio, quejas / interacciones.</p>
+</div>
+
+<div class="kb-item" id="marketing-media">
+  <h3><span class="kb-num">5.3</span> Media Móvil</h3>
+  <p>Uso promedio del servicio en las últimas semanas, para medir el nivel de actividad reciente.</p>
+</div>
+
+<div class="kb-item" id="marketing-lags">
+  <h3><span class="kb-num">5.4</span> Lags</h3>
+  <p>Uso o gasto del mes anterior, para detectar caídas.</p>
+</div>
+
+<div class="kb-item" id="marketing-frecuencia">
+  <h3><span class="kb-num">5.5</span> Frecuencia</h3>
+  <p>Número de interacciones, inicios de sesión o compras por periodo.</p>
+</div>
+
+<div class="kb-item" id="marketing-recencia">
+  <h3><span class="kb-num">5.6</span> Recencia</h3>
+  <p>Días desde la última interacción con la marca.</p>
+</div>
+
+<div class="kb-item" id="marketing-tendencias">
+  <h3><span class="kb-num">5.7</span> Tendencias</h3>
+  <p>Pendiente del uso en los últimos meses. Un uso que cae de forma sostenida anticipa el churn mejor que un solo mes malo.</p>
+</div>
+
+<h2 id="manufactura" class="st-h2"><span>6</span> Ingeniería de Variables para Manufactura</h2>
+<p class="kb-seccion-intro">Variables a partir de sensores y registros de producción para mantenimiento predictivo y control de calidad.</p>
+
+<div class="kb-item" id="manufactura-ratios">
+  <h3><span class="kb-num">6.1</span> Ratios (A/B)</h3>
+  <p>Piezas defectuosas / piezas producidas, tiempo productivo / tiempo disponible (base del OEE), consumo de energía por pieza.</p>
+</div>
+
+<div class="kb-item" id="manufactura-media">
+  <h3><span class="kb-num">6.2</span> Media Móvil</h3>
+  <p>Temperatura, vibración o presión promedio de los últimos minutos u horas para eliminar el ruido del sensor.</p>
+</div>
+
+<div class="kb-item" id="manufactura-lags">
+  <h3><span class="kb-num">6.3</span> Lags</h3>
+  <p>Lecturas anteriores del sensor, para capturar la dinámica de la máquina.</p>
+</div>
+
+<div class="kb-item" id="manufactura-volatilidad">
+  <h3><span class="kb-num">6.4</span> Volatilidad</h3>
+  <p>Desviación estándar móvil de las lecturas. Un aumento de la vibración suele anticipar una falla.</p>
+</div>
+
+
+<div class="kb-lab vz-lab" data-viz="iv-vibra"></div>
+<div class="kb-item" id="manufactura-tendencias">
+  <h3><span class="kb-num">6.5</span> Tendencias</h3>
+  <p>Pendiente de la temperatura o el desgaste en las últimas horas, para estimar cuánto falta para llegar a un umbral crítico.</p>
+</div>
+
+<div class="kb-item" id="manufactura-acumulados">
+  <h3><span class="kb-num">6.6</span> Acumulados</h3>
+  <p>Horas de operación desde el último mantenimiento, ciclos acumulados, piezas producidas en el turno.</p>
+</div>
+</div>
+                    </div>
+                </div>
+    </section>
+    <!--/ Section Blog-Single End /-->
+    <!--/ Navegación entre conocimientos /-->
+    <nav class="tema-nav" aria-label="Otros conocimientos">
+        <a class="ant" href="azure.html"><small>← Anterior</small><b>AZURE</b></a>
+        <a class="todo" href="index.html#variables"><img src="assets/datasquad-icono.png" alt=""><b>Conocimiento</b></a>
+        <a class="sig" href="matematicas.html"><small>Siguiente →</small><b>Matemáticas</b></a>
+    </nav>
+
+
+    <!--/ Section Contact-Footer Star /-->
+    <section class="paralax-mf footer-paralax bg-image sect-mt4 route"
+        style="background-image: url(img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="copyright-box">
+                            <p class="copyright">&copy; Juan Pablo Hernández García</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!--/ Section Contact-footer End /-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/popper/popper.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/counterup/jquery.waypoints.min.js"></script>
+    <script src="lib/counterup/jquery.counterup.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
+
+<a href="#indice" class="kb-volver">↑ Índice</a>
+<a class="tema-pill" href="index.html#variables"><img src="assets/datasquad-icono.png" alt="">Conocimiento</a>
+<script src="js/scroll-fx.js"></script>
+<script src="js/visual-fx.js"></script>
+</body>
+
+</html> 

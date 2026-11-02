@@ -1,0 +1,49 @@
+/* ===== Conocimientos vol. 2: rediseño visual (no quita contenido) ===== */
+:root{--g:linear-gradient(90deg,#00C2FF 0%,#C13CFF 38%,#19E36B 72%,#F2E814 100%);--tinta:#141824;--suave:#f6f7fb;--borde:#e6e9f2}
+
+/* Números de sección: círculo oscuro con aro de color, el número siempre se lee */
+.st-h2 span{flex:0 0 42px !important;height:42px !important;border-radius:50% !important;color:#fff !important;font-weight:700 !important;
+  border:2px solid transparent !important;background:linear-gradient(#11131b,#11131b) padding-box,var(--g) border-box !important;
+  box-shadow:0 6px 18px rgba(193,60,255,.22)}
+.kb-num{background:#11131b !important;color:#fff !important;border:1.5px solid transparent;background:linear-gradient(#11131b,#11131b) padding-box,var(--g) border-box !important}
+.st-pasos span{background:#11131b !important;border:1.5px solid transparent;background:linear-gradient(#11131b,#11131b) padding-box,var(--g) border-box !important}
+
+/* Títulos */
+.article-content h2:not(.article-title):not(.st-h2){color:var(--tinta);font-weight:700;letter-spacing:-.01em}
+.article-content h3:not(.kb-item h3):not(.st-card h3){position:relative;padding-left:16px;color:var(--tinta);font-weight:600;margin-top:28px}
+.article-content h3:not(.kb-item h3):not(.st-card h3)::before{content:"";position:absolute;left:0;top:.2em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(#00C2FF,#C13CFF)}
+.article-content h3[style*="color:#007bff"]{color:var(--tinta) !important}
+.article-content h4{color:#2d3a8c;font-weight:600}
+.article-content p,.article-content li{color:#353c4a}
+.article-content li::marker{color:#9B3FD9}
+.article-content a:not(.cta){color:#1e6fd9}
+
+/* Tablas: encabezado oscuro, esquinas redondeadas, filas alternas */
+.article-content table:not(.tabla-indice){border-collapse:separate !important;border-spacing:0 !important;border-radius:12px;overflow:hidden;
+  box-shadow:0 6px 22px rgba(16,24,40,.07);border:1px solid var(--borde) !important;margin:14px 0 22px}
+.article-content table:not(.tabla-indice) th,
+.article-content table:not(.tabla-indice) thead tr,
+.article-content table:not(.tabla-indice) tr[style*="007bff"],
+.article-content thead.table-primary tr,.article-content thead.table-success tr{background:#1f2430 !important;color:#fff !important}
+.article-content table:not(.tabla-indice) th{border:0 !important;border-bottom:2px solid transparent !important;
+  border-image:var(--g) 1 !important;font-weight:600;padding:11px 12px !important}
+.article-content table:not(.tabla-indice) td{border:0 !important;border-top:1px solid var(--borde) !important;padding:10px 12px !important}
+.article-content table:not(.tabla-indice) tbody tr:nth-child(even) td{background:#f8f9fc}
+.article-content table:not(.tabla-indice) tbody tr:hover td{background:#f3efff}
+
+/* Cajas de nota (azules y verdes) */
+.article-content div[style*="solid #007bff"]{background:#eef6ff !important;border-left:4px solid #00C2FF !important;border-radius:10px;box-shadow:0 4px 14px rgba(0,120,255,.06)}
+.article-content div[style*="solid #28a745"]{background:#ecfbf2 !important;border-left:4px solid #19E36B !important;border-radius:10px}
+.article-content blockquote,.blog-wrapper .blockquote{background:#f6f3ff !important;border-left:4px solid #C13CFF !important;border-radius:10px;font-style:normal}
+
+/* Fórmulas grandes centradas como tarjeta */
+.article-content p[style*="text-align:center"][style*="font-size"],.article-content p[style*="text-align: center"][style*="font-size"]{background:var(--suave);border-radius:12px;padding:12px 16px;border:1px solid var(--borde)}
+
+/* Imágenes */
+.article-content img{border-radius:12px;box-shadow:0 10px 30px rgba(16,24,40,.10);transition:transform .4s ease,box-shadow .4s ease}
+.article-content img:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(16,24,40,.16)}
+
+/* Tarjetas de temas, ejemplos e índice */
+.kb-ej{box-shadow:0 4px 16px rgba(16,24,40,.05)}
+.st-indice,.tabla-indice{border:1px solid var(--borde)}
+.st-callout{border-radius:10px}
